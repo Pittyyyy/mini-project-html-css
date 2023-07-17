@@ -5,39 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <title>Mini Project 1 By Myself</title>
+
 </head>
 
 <body class="font-rukbik box-border">
 
-<section class="bg-[#F4F7FC] box-border">
-    <nav class="p-10">
-      <div class="bg-[#000000] ml-40" >
-        <div>
-          <div class=" bg-[#F4F7FC] w-full flex relative">
-            <span class=""><svg xmlns="http://www.w3.org/2000/svg" width="40" height="43" viewBox="0 0 40 43" fill="none">
-              <path d="M6 31.8923C-2 27.2735 -2 15.7265 6 11.1077L21.75 2.01443C29.75 -2.60438 39.75 3.16913 39.75 12.4067L39.75 30.5933C39.75 39.8309 29.75 45.6044 21.75 40.9856L6 31.8923Z" fill="#1374F6"/>
-            </svg></span>
-            <span class="absolute left-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="43" viewBox="0 0 40 43" fill="none">
-              <path d="M6.25 11.5407L22 2.44744C29.6667 -1.97891 39.25 3.55403 39.25 12.4067L39.25 30.5933C39.25 39.446 29.6667 44.9789 22 40.5526L6.25 31.4593C-1.41667 27.0329 -1.41667 15.9671 6.25 11.5407Z" fill="white" fill-opacity="0.67" stroke="#F2F2F2"/>
-            </svg></span>
-            <div class="text-[#0B0757] text-4xl font-bold  pl-4 ">Agencio</div>
-            <div class="flex text-[#1F1E61] text-lg justify-end align-baseline  h-12 w-full p-2 mr-40">
-              <div class="mr-12 ">Home</div>
-              <div class="mr-12 ">Category</div>
-              <div class="mr-12 ">Service</div>
-              <div class="mr-12 ">Blog</div>
-              <div class="mr-12 ">Contact</div>
-              <div><buton class="bg-[#FDD76E] rounded-lg font-semibold hover:bg-yellow-300 text-center w-[190px] h-[60px] p-5">Create Account</buton></div>
-          </div>
-          
-           
-        </div>
+<section class="bg-[#F4F7FC] ">
+    <nav class="p-10 bg-[#F4F7FC] md:flex items-center md:justify-between">
+      <div class="flex justify-between relative cursor-pointer md:mx-40 ">
+        <span class="text-[#0B0757] text-4xl font-bold  pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="43" viewBox="0 0 40 43" fill="none" class="inline relative">
+            <path d="M6 31.8923C-2 27.2735 -2 15.7265 6 11.1077L21.75 2.01443C29.75 -2.60438 39.75 3.16913 39.75 12.4067L39.75 30.5933C39.75 39.8309 29.75 45.6044 21.75 40.9856L6 31.8923Z" fill="#1374F6"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="43" viewBox="0 0 40 43" fill="none" class="absolute inline left-6 top-1">
+            <path d="M6.25 11.5407L22 2.44744C29.6667 -1.97891 39.25 3.55403 39.25 12.4067L39.25 30.5933C39.25 39.446 29.6667 44.9789 22 40.5526L6.25 31.4593C-1.41667 27.0329 -1.41667 15.9671 6.25 11.5407Z" fill="white" fill-opacity="0.67" stroke="#F2F2F2"/>
+          </svg>
+          Agencio
+          </span>
+          <span class="text-3xl cursor-pointer md:hidden block mx-2">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+          </span>
       </div>
+      <ul class="md:flex md:item-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-12 md:pl-0 pl-7 md:opacity-100 opacity-0 md: px-40 top-[-400px] transition-all ease-in duration-500">
+        <li class="mx-4 md:wmy-0">
+          <a href="#" class="text-xl hover:text-cyan-500 duration-500">Home</a>
+        </li>
+        <li class="mx-4 md:my-0">
+          <a href="#" class="text-xl hover:text-cyan-500 duration-500">Category</a>
+        </li>
+        <li class="mx-4 md:my-0">
+          <a href="#" class="text-xl hover:text-cyan-500 duration-500">Service</a>
+        </li>
+        <li class="mx-4 md:my-0">
+          <a href="#" class="text-xl hover:text-cyan-500 duration-500">Blog</a>
+        </li>
+        <li class="mx-4 md:my-0">
+          <a href="#" class="text-xl hover:text-cyan-500 duration-500">Contact</a>
+        </li>
+        <button class="bg-[#FDD76E] rounded-lg font-semibold hover:bg-yellow-300 duration-500 px-6 py-3 md:mx-5">
+          Create Account
+        </button>
+      </ul>
     </nav>
   
 </section>
 
+
+
+<script>
+  function Menu(e) {
+    let list = document.querySelector('ul')
+
+    e.name === 'menu' ? (e.name = "close" ,list.classList.add('top-[80px]') , list.classList.add('opacity-100')) : (e.name = "menu" ,list.classList.remove('top-[80px]'), list.classList.remove('opacity-100'))
+  }
+</script>
 </body>
 
 </html>
